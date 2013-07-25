@@ -8,6 +8,11 @@ feature 'Creating Item' do
     fill_in 'Type', :with => 'Book'
     click_button 'Create Item'
     page.should have_content('Item has been created.')
+
+    item = Item.find_by_name('Test Item')
+    page.current_url.should == item_url(item)
+    title = "Test Item - Items - Media Tracker"
+    find("title").should have_content(title)
   end
 end
 
