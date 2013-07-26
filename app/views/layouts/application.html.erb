@@ -14,6 +14,8 @@
 </head>
 <body>
 
+  <h1>Media Tracker</h1>
+
 <% flash.each do |key, value| %>
   <div class='flash' id='<%= key %>'>
     <%= value %>
@@ -21,6 +23,12 @@
 <% end %>
 
 <%= yield %>
+
+<div>
+  <hr>
+  <%= link_to "See all items", items_path(:item) %> |
+  <%= link_to "See all locations", locations_path(:location) %>
+</div>
 
 </body>
 </html>

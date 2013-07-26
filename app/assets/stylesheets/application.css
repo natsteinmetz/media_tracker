@@ -165,3 +165,9 @@ menu, #ticket .state, .states {
 .comment, .new_comment {
     width: 75%;
 }
+
+.footer {
+    margin-bottom: 50px;
+  }
+
+
