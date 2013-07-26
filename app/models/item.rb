@@ -1,4 +1,8 @@
 class Item < ActiveRecord::Base
+  has_many :itemStorages
+  has_many :locations, :through => :itemStorages
+
+
   attr_accessible :name, :type
 
   validates :name, :presence => true

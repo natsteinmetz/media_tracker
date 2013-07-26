@@ -1,4 +1,7 @@
 class Location < ActiveRecord::Base
+  has_many :itemStorages
+  has_many :items, :through => :itemStorages
+
   attr_accessible :description, :name, :room, :type
 
   validates :name, :presence => true
