@@ -4,6 +4,7 @@ MediaTracker::Application.routes.draw do
 
   resources :items
   resources :locations
+  resources :itemStorage
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

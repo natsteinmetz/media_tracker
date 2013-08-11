@@ -3,6 +3,7 @@ require 'spec_helper'
 feature 'Creating Location' do
 
   before do
+    Factory(:item, :name => "Test Item")
     visit '/'
     click_link "See all locations"
     click_link "New Location"
@@ -21,7 +22,7 @@ feature 'Creating Location' do
     find("title").should have_content(title)
   end
 
-  scenario "can not create an location without a name" do
+  scenario "can not create an location without valid attributes" do
     click_button "Create Location"
     page.should have_content("Location has not been created.")
     page.should have_content("Name can't be blank")
